@@ -17,8 +17,8 @@
     <description>Partner Webhook Microservice</description>
 
     <properties>
-        <java.version>11</java.version>
-        <jacoco.version>0.8.4</jacoco.version>
+        <java.version>17</java.version>
+        <jacoco.version>0.8.8</jacoco.version>
         <hapi.version>6.2.2</hapi.version>
         <spring-cloud.version>2021.0.0</spring-cloud.version>
 
