@@ -6,6 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
 import java.util.Arrays;
+import java.util.HexFormat;
 
 @Slf4j
 @UtilityClass
@@ -18,7 +19,7 @@ public class HmacUtil {
             Mac mac = Mac.getInstance(HMAC_ALGORITHM);
             mac.init(secretKey);
             byte[] hmacData = mac.doFinal(data.getBytes());
-            return javax.xml.bind.DatatypeConverter.printHexBinary(hmacData).toLowerCase();
+            return HexFormat.of().formatHex(hmacData);
         } catch (Exception ex) {
             log.error("Error while generating Hmac {}", ex);
         }
