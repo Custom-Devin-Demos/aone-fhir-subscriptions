@@ -2,6 +2,13 @@ com:
   athenahealth:
     iam:
       host: https://localhost:8080/oauth2/v1/token
+    api:
+      baseUrl: https://localhost:8080
+      fhirBasePath: /fhir/r4
+      scopes: athena/service/Athenanet.MDP.* system/Patient.read
+      endpoints:
+        appointment: /v1/{practiceid}/appointments/{id}
+        order: /v1/{practiceid}/patients/{patientid}/documents/order/{id}
     mdp:
       host: https://localhost:8081/v1/
       scopes: athena/service/Athenanet.MDP.*
